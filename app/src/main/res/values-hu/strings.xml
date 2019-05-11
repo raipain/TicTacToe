@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TicTacToe</string>
+    <string name="back_btn">Vissza</string>
+    <string name="start_btn">Új játék</string>
+    <string name="stats">Statisztikák</string>
+    <string name="won">Nyertél!</string>
+    <string name="lost">Vesztettél!</string>
+    <string name="draw">Döntetlen!</string>
+    <string name="main_menu">Főmenű</string>
+    <string name="end">Játék vége</string>
+</resources>
