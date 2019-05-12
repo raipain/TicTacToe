@@ -8,4 +8,9 @@
     <string name="draw">Draw!</string>
     <string name="main_menu">Main menu</string>
     <string name="end">Game ended</string>
+    <string name="stat_gp">Games played</string>
+    <string name="stat_w">Won</string>
+    <string name="stat_d">Ties</string>
+    <string name="stat_l">Lost</string>
+    <string name="stat_p">Win percentage</string>
 </resources>

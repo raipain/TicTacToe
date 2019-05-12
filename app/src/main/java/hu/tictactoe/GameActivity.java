@@ -1,6 +1,8 @@
 package hu.tictactoe;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,11 +14,15 @@ public class GameActivity extends AppCompatActivity {
 
     private Button[][] buttons;
     private Game game;
+    private int[] stats;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        stats = MainActivity.trans(preferences.getString("stats", null));
 
         buttons = new Button[3][3];
 
@@ -40,12 +46,33 @@ public class GameActivity extends AppCompatActivity {
             myAlertBuilder.setTitle(R.string.end);
             if(game.getText().equals("X")) {
                 myAlertBuilder.setMessage(R.string.won);
+                stats[0]++;
+                stats[1]++;
+                final SharedPreferences prefs = PreferenceManager
+                        .getDefaultSharedPreferences(this);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("stats", "games_played:"+stats[0]+";wins:"+stats[1]+";ties:"+stats[2]+";losses:"+stats[3]);
+                editor.commit();
             }
             else if(game.getText().equals("O")) {
                 myAlertBuilder.setMessage(R.string.lost);
+                stats[0]++;
+                stats[3]++;
+                final SharedPreferences prefs = PreferenceManager
+                        .getDefaultSharedPreferences(this);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("stats", "games_played:"+stats[0]+";wins:"+stats[1]+";ties:"+stats[2]+";losses:"+stats[3]);
+                editor.commit();
             }
             else {
                 myAlertBuilder.setMessage(R.string.draw);
+                stats[2]++;
+                stats[1]++;
+                final SharedPreferences prefs = PreferenceManager
+                        .getDefaultSharedPreferences(this);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("stats", "games_played:"+stats[0]+";wins:"+stats[1]+";ties:"+stats[2]+";losses:"+stats[3]);
+                editor.commit();
             }
             myAlertBuilder.setPositiveButton(R.string.start_btn,
                     new DialogInterface.OnClickListener() {

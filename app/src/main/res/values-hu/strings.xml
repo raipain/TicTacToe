@@ -8,4 +8,9 @@
     <string name="draw">Döntetlen!</string>
     <string name="main_menu">Főmenű</string>
     <string name="end">Játék vége</string>
+    <string name="stat_gp">Meccsek száma</string>
+    <string name="stat_w">Győzelem</string>
+    <string name="stat_d">Döntetlen</string>
+    <string name="stat_l">Vereség</string>
+    <string name="stat_p">Győzelmi ráta</string>
 </resources>
