@@ -67,7 +67,7 @@ public class GameActivity extends AppCompatActivity {
             else {
                 myAlertBuilder.setMessage(R.string.draw);
                 stats[2]++;
-                stats[1]++;
+                stats[0]++;
                 final SharedPreferences prefs = PreferenceManager
                         .getDefaultSharedPreferences(this);
                 SharedPreferences.Editor editor = prefs.edit();
